@@ -1,3 +1,0 @@
-[console_scripts]
-mypackage = mypackage.simple_crud:main
-

@@ -4,6 +4,5 @@ FastApiSimpleCRUD/crud.py
 FastApiSimpleCRUD.egg-info/PKG-INFO
 FastApiSimpleCRUD.egg-info/SOURCES.txt
 FastApiSimpleCRUD.egg-info/dependency_links.txt
-FastApiSimpleCRUD.egg-info/entry_points.txt
 FastApiSimpleCRUD.egg-info/requires.txt
 FastApiSimpleCRUD.egg-info/top_level.txt
