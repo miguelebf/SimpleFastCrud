@@ -15,7 +15,7 @@ pip install SimpleFastCrud
 ```python
 from fastapi import FastAPI, Depends, APIRouter
 from sqlalchemy.orm import Session
-from FastApiSimpleCRUD.crud import SimpleCrud
+from SimpleFastCrud.crud import SimpleFastCrud
 from your_project.database import get_db  # Function to get the database session
 from your_project.models import YourModel  # SQLAlchemy model
 
@@ -54,7 +54,7 @@ class User(Base):
 ```python
 from fastapi import FastAPI, Depends, APIRouter
 from sqlalchemy.orm import Session
-from FastApiSimpleCRUD.crud import SimpleCrud
+from SimpleFastCrud.crud import SimpleFastCrud
 from your_project.database import get_db
 from your_project.models import User
 

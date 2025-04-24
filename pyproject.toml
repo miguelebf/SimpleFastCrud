@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "SimpleFastCrud"
+version = "0.1"
+description = "SimpleFastCrud is a tool that simplifies the creation of dynamic CRUD endpoints in FastAPI using SQLAlchemy and Pydantic."
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE.md" }
+authors = [
+    { name = "Miguel Bustamante", email = "your_email@example.com" }, # Reemplaza con un email real si lo deseas
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Framework :: FastAPI",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "fastapi",
+    "pydantic",
+    "sqlalchemy",
+]
+
+[project.urls]
+Homepage = "https://github.com/miguelebf/SimpleFastCrud" # Reemplaza con la URL real del repositorio si existe
+"Bug Tracker" = "https://github.com/miguelebf/SimpleFastCrud/issues" # Reemplaza con la URL real del repositorio si existe
+
+[tool.setuptools.packages.find]
+where = ["."] # Busca paquetes en el directorio raíz
+include = ["FastApiSimpleCRUD*"] # Incluye el paquete principal
+exclude = ["tests*"] # Excluye directorios de prueba

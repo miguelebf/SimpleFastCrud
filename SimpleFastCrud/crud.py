@@ -5,7 +5,7 @@ from pydantic import BaseModel, create_model
 from sqlalchemy.orm import Session
 
 
-class SimpleCrud:
+class SimpleFastCrud:
 
     def __init__(self):
         self.models = []

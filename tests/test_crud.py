@@ -6,7 +6,7 @@ from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-from FastApiSimpleCRUD.crud import SimpleCrud
+from SimpleFastCrud.crud import SimpleFastCrud
 
 
 class TestSimpleCrud(unittest.TestCase):
