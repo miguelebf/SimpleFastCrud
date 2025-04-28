@@ -211,20 +211,18 @@ class SimpleFastCrud:
             db: Session = Depends(get_db),
             authorized_user: dict = auth_dep
             ):
-            if auth_dep and not authorized_user:
-                raise HTTPException(
-                    status_code=401, detail="Authentication required"
-                    )
-
             query = db.query(model)
 
             if filter_param and authorized_user:
-                tenant_id = authorized_user.get(filter_param)
-                if not tenant_id:
+                filter_param_ = authorized_user.get(filter_param)
+                if not filter_param_:
                     raise HTTPException(
-                        status_code=403, detail="No tenant ID found in user"
+                        status_code=403,
+                        detail=f'No {filter_param} found in user'
                         )
-                query = query.filter(getattr(model, filter_param) == tenant_id)
+                query = query.filter(
+                    getattr(model, filter_param_) == filter_param_
+                    )
 
             db_model = query.filter(model.id == id).first()
 
@@ -335,9 +333,9 @@ class SimpleFastCrud:
         if filter_param and auth_dep:
             func_code += (
                 "    if authorized_user:\n"
-                f"        tenant_id = authorized_user.get('{filter_param}')\n"
-                "        if tenant_id is not None:\n"
-                f"            query = query.filter(model.{filter_param} == tenant_id)\n"
+                f"        filter_param_ = authorized_user.get('{filter_param}')\n"
+                "        if filter_param_ is not None:\n"
+                f"            query = query.filter(model.{filter_param} == filter_param_)\n"
                 "        else:\n"
                 "            raise HTTPException(status_code=400, detail='Missing tenant ID')\n"
                 )
